@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Freshness & Expiry Checker</title>
+
+    <!-- Flask static CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='mini2.css') }}">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>Food Freshness &amp; Expiry Detection</h1>
+            <p class="tagline">Check from an image — Fresh or Spoiled / Read expiry on the package</p>
+        </div>
+    </header>
+
+    <main class="container main-grid">
+
+        <!-- ==== LEFT: Upload ==== -->
+        <section class="card upload-card">
+            <h2>Image Upload</h2>
+            <p>Upload a picture of your food item or package.</p>
+
+            <!-- FORM -->
+            <form method="POST" enctype="multipart/form-data">
+                <div class="upload-area" id="uploadArea">
+                    <!-- name="file" must match BACKEND -->
+                    <input type="file" id="imgInput" name="file" accept="image/*" />
+                    <p class="small">Or drag & drop here</p>
+                </div>
+
+                <button type="submit" class="primary-btn">Analyze</button>
+            </form>
+
+            <!-- ==== Uploaded Image Preview ==== -->
+            <div class="preview">
+                <h3>Uploaded Image</h3>
+
+                {% if img_url %}
+                    <img src="{{ img_url }}"
+                         alt="Uploaded Image"
+                         style="max-width:100%; border-radius:16px;" />
+                {% else %}
+                    <p class="muted">No image uploaded yet. The uploaded image will appear here.</p>
+                {% endif %}
+            </div>
+
+            <p class="note">(This will now give real AI prediction from the backend)</p>
+        </section>
+
+        <!-- ==== RIGHT: Results ==== -->
+        <section class="card result-card" id="resultCard">
+            <h2>Result</h2>
+
+            <!-- OCR (Demo placeholder) -->
+            <div class="result-section">
+                <h3>OCR (Expiry) — Package Date</h3>
+                <div class="result-box" id="ocrBox">
+                    <p class="muted">OCR result will appear here (currently demo text)</p>
+                </div>
+            </div>
+
+            <!-- Visual Prediction -->
+            <div class="result-section">
+                <h3>Visual Prediction — Freshness</h3>
+                <div class="result-box" id="visualBox">
+                    {% if prediction %}
+                        <p><strong>Prediction:</strong> {{ prediction }}</p>
+                    {% else %}
+                        <p class="muted">AI prediction will appear here (Fresh / Rotten)</p>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Final Decision -->
+            <div class="result-section">
+                <h3>Final Decision</h3>
+                <div class="result-box final" id="finalBox">
+                    {% if prediction %}
+                        <p>{{ prediction }}</p>
+                    {% else %}
+                        <p class="muted">Final decision will appear here</p>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
