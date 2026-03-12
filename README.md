@@ -1,48 +1,105 @@
-# Food Freshness Detection 🍎
+# 🍎 Food Freshness Detection System
 
-This project detects whether food is **Fresh or Spoiled** using **Deep Learning and Image Processing**.
+This project detects whether a food item is **Fresh or Rotten** using **Deep Learning and Image Processing**.
 
-## Technologies Used
+The user can upload an image of food and the system will predict whether the food is fresh or spoiled.
+
+---
+
+# 🚀 Features
+
+- Upload food image
+- Detect whether food is **Fresh or Rotten**
+- Web interface using **Flask**
+- Deep Learning model using **TensorFlow/Keras**
+- Image prediction with confidence score
+
+---
+
+# 🛠 Technologies Used
+
 - Python
 - TensorFlow / Keras
 - Flask
 - HTML
 - CSS
 - JavaScript
+- OpenCV
 
-## Features
-- Upload food image
-- Detect if food is Fresh or Rotten
-- Web interface using Flask
-- Deep learning model for prediction
+---
 
-## Project Structure
-MiniProject/
+# 📂 Project Structure
+
+
+MiniProject
 │
 ├── app.py
 ├── train_model.py
 ├── freshness_model.h5
-├── templates/
-│   └── mini.html
-├── static/
-│   └── mini2.css
-└── uploads/
+│
+├── templates
+│ └── mini.html
+│
+├── static
+│ └── mini2.css
+│
+├── uploads
+│
+└── dataset
 
-## How to Run the Project
 
-1. Clone the repository
-2. Install dependencies
+---
 
-pip install -r requirements.txt
+# ▶️ How to Run the Project
 
-3. Run the application
+### 1️⃣ Clone the Repository
+
+
+git clone https://github.com/shivamnishad01/Food-Freshness-Detection.git
+
+
+### 2️⃣ Go to Project Folder
+
+
+cd Food-Freshness-Detection
+
+
+### 3️⃣ Install Required Libraries
+
+
+pip install flask
+pip install tensorflow
+pip install pillow
+pip install numpy
+
+
+### 4️⃣ Run the Application
+
 
 python app.py
 
-4. Open browser and go to
+
+### 5️⃣ Open Browser
+
 
 http://127.0.0.1:5000
 
-## Author
-Shivam Nishad
-B.Tech AI & DS
+
+Upload an image and check whether the food is **Fresh or Rotten**.
+
+---
+
+# 📸 Project Screenshot
+
+(Add your project screenshot here)
+
+---
+
+# 👨‍💻 Author
+
+**Shivam Nishad**  
+B.Tech (AI & DS)
+
+---
+
+# ⭐ If you like this project, give it a star!
