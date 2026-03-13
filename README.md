@@ -101,5 +101,3 @@ Upload an image and check whether the food is **Fresh or Rotten**.
 B.Tech (AI & DS)
 
 ---
-
-# ⭐ If you like this project, give it a star!
